@@ -12,20 +12,25 @@ layout: default
         {% endfor %}
     </ul>
 </div>
-<div class="blog">
-    <h1>Blog Posts:</h1>
+
+<div class="title">
+    <h1>Exploratorium:</h1>
     <ul>
-        {% for post in site.posts %}
+        {% for post in site.categories.exploratorium %}
         <li>
             <span class="date">{{ post.date | date: '%Y %b %d' }}</span> - <a href="{{ post.url }}">{{ post.title }}</a>
         </li>
         {% endfor %}
     </ul>
 </div>
-<!--
-<div class="music">
-    <h1>Now Playing:</h1>
-    <a href="http://www.last.fm/user/getmicah"><span id="nowPlaying"></span></a>
+
+<div class="title">
+    <h1>Etc:</h1>
+    <ul>
+        {% for post in site.categories.etc %}
+        <li>
+            <span class="date">{{ post.date | date: '%Y %b %d' }}</span> - <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
 </div>
-<script src="/assets/js/main.js"></script>
--->

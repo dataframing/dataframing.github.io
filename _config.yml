@@ -1,23 +1,14 @@
 # Blog settings
 permalink: /blog/:title
 
-
-# My variables
-name: Micah Cowell
-description: Futuristic web design
-google_verification: null
-
-
 # File management
 include: [".htaccess"]
 exclude: ["README.md", "LICENSE"]
-
 
 # Sass
 sass:
   style: :compressed
   sass_dir: _sass
-
 
 # Markdown
 markdown: kramdown
@@ -25,3 +16,15 @@ kramdown:
   input: GFM
   hard_wrap: false
 highlighter: rouge
+
+# My variables
+name: Danny Vilela
+google_verification: null
+
+# Site settings
+title: data frame | danny's blog
+email: danny.vilela@nyu.edu
+description: >
+    An incremental blog by Danny Vilela about exploratory data analysis, data science, and sometimes birds. Okay, mostly birds.
+baseurl: ""
+url: ""
