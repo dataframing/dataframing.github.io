@@ -28,3 +28,7 @@ description: >
     An incremental blog by Danny Vilela about exploratory data analysis, data science, and sometimes birds. Okay, mostly birds.
 baseurl: ""
 url: ""
+
+# Gems
+gems:
+  - jekyll-seo-tag
