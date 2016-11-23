@@ -192,6 +192,10 @@ ul {
 				margin-left: 10px;
 			}
 		}
+        ol {
+            // To copy ul margin-left.
+            margin-left: 30px;
+        }
 		img {
 			margin-top: 10px;
 			margin-bottom: 10px;
@@ -247,4 +251,14 @@ ul {
 			margin-bottom: 10px;
 		}
 	}
+}
+
+.error {
+    position: relative;
+    margin-left: 14%;
+    margin-top: 5%;
+}
+
+small {
+    font-size: 0.70em;
 }
