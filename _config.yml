@@ -24,8 +24,8 @@ google_verification: null
 # Site settings
 title: data frame | danny's blog
 email: danny.vilela@nyu.edu
-description: >
-    An incremental blog by Danny Vilela about exploratory data analysis, data science, and sometimes birds. Okay, mostly birds.
+# Commenting out to avoid "{{site.title}} - "
+# description: ""
 baseurl: ""
 url: "https://dataframing.github.io"
 
