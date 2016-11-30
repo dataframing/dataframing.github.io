@@ -19,10 +19,9 @@ highlighter: rouge
 
 # My variables
 name: Danny Vilela
-google_verification: null
 
 # Site settings
-title: data frame | danny's blog
+title: dataframe | danny's blog
 email: danny.vilela@nyu.edu
 # Commenting out to avoid "{{site.title}} - "
 # description: ""
