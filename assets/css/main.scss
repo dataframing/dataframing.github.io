@@ -6,10 +6,8 @@
 
 body {
 	color: $color-black;
-//    background: $color-white;
-//    background: rgba(253, 245, 230, 0.65);
     background: rgba(255, 250, 240, 0.50);
-	font-family: 'Inconsolata', ;
+	font-family: 'Inconsolata';
 	font-size: 100%;
 	font-weight: 400;
 }
@@ -61,8 +59,8 @@ ul {
 
 
 .wrapper {
-	max-width: 600px;
-	margin: auto;
+	max-width: 51%;
+    margin: auto;
 	padding: 60px 30px 60px 30px;
 	@media screen and (max-width: $br) {
 		padding: 20px;
@@ -205,29 +203,6 @@ ul {
 				width: 100%;
 				margin: auto;
 			}
-		}
-		code {
-			padding: 3px;
-			font-size: 0.9em;
-			border-radius: 3px;
-			background: $color-grey;
-		}
-		.highlight {
-			margin: 10px;
-			margin-bottom: 15px;
-			padding: 10px;
-			line-height: 1.5;
-			border-radius: 3px;
-			background: $color-black;
-			code {
-				color: $color-code;
-				background: none;
-			}
-		}
-		.codebreak {
-			margin: 15px;
-			border: 0;
-			border-bottom: 1px dashed $color-black;
 		}
 	}
 }
