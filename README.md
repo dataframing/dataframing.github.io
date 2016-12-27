@@ -4,6 +4,13 @@ This is a Jekyll blog theme/layout I forked from Github user [getmicah](https://
 
 Below is the README included in the original repository. The instructions for getting setup with Jekyll are pretty clear, but feel free to reach out if something doesn't make sense! I've probably stumbled over that same problem and I'm happy to help.
 
+### To-do
+
+- Make things not terrible on mobile :)
+- Get that bookshelf populated!
+- Read!
+- Get a few Exploratorium examples up
+
 ---
 
 # blog
