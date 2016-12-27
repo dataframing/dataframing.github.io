@@ -1,8 +1,8 @@
 ---
 layout: bookshelf
 title: Bookshelf of Things
-keywords: "machine learning bookshelf, machine learning books, data science books, learn data science, python for machine learning, books, free books"
-description: "I share a list of books on data science and machine learning that are on my bookshelf!"
+keywords: danny vilela, danny vilela nyu, danny vilela nyu website, danny vilela nyu bookshelf, machine learning bookshelf, machine learning books, data science bookshelf, data science books, learn data science, python for machine learning, books, free books
+description: I share a list of books on data science and machine learning that are on my bookshelf!
 ---
 
 **Hi!** My name is Danny Vilela. You can find out more [about me](/me), but otherwise this is my (online) bookshelf. Digital bookshelves are nice in that they aren't bound to *just* books – they can also hold online courses and other resources that I tend to appreciate as I learn more about data science!
