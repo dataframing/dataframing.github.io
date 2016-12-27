@@ -98,16 +98,100 @@ ul {
 	}
 }
 
-.music {
-	padding-bottom: 30px;
-	h1 {
-		font-size: 1.4em;
-		margin-bottom: 5px;
+.bookshelf {
+    padding-bottom: 30px;
+    padding-top: 30px;
+    
+    &__back {
+        a {
+            
+        }
+    }
+    
+    &__title {
+        display: block;
+        margin-top: 20px;
+		margin-bottom: 6px;
+		
+        h1 {
+			display: inline-block;
+			font-size: 1.6em;
+			font-weight: 700;
+			padding-right: 10px;
+			padding-bottom: 2px;
+			text-decoration: none;
+			border-bottom: 3px solid $color-black;
+		}
+    }
+    
+    &__last_updated_at {
+        font-size: 1em;
+        font-style: italic;
+    }
+    
+    &__meta {
+        p {
+
+		}
 	}
-	a {
-		padding: 5px;
-		padding-left: 10px;
-	}
+    
+    &__content {
+        
+        table {
+            margin: 0;
+            padding: 0;
+            
+            border-collapse: collapse;
+            width: 100%;
+            
+            tr {
+                border: 1px solid #cccccc;
+                background-color: #f8f8f8;
+                
+                th {
+                    border: 1px solid #cccccc;
+                    font-weight: bold;
+                    text-align: center;
+                    padding: 6px 13px;
+                    background-color: white;
+                    vertical-align: middle;
+                }
+                
+                td {
+                    border: 1px solid #cccccc;
+                    text-align: left;
+                    padding: 8px 17px;
+                    vertical-align: top;
+                    
+                    ul {
+                        font-size: 1em;
+                        list-style: circle;
+                        margin-left: 30px;
+                        margin-top: 12.5px;
+                        margin-bottom: 12.5px;
+                        li {
+                            padding-top: 1px;
+                            padding-left: 5px;
+                            line-height: 1.5em;
+                            @media screen and (max-width: $br) {
+                                padding: 10px 0 10px 0;
+                            }
+                        }
+                    }
+                    
+                    ol {
+                        // To copy ul margin-left.
+                        margin-left: 30px;
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+        }
+    }
+    
+    &__content_wrapper {
+        padding-bottom: 30px;
+    }
 }
 
 .post {
@@ -142,7 +226,8 @@ ul {
 
 		}
 	}
-	&__content {
+	
+    &__content {
 		padding-top: 40px;
 		h1 {
 			font-size: 1.4em;

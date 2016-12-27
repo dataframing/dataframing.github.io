@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<div class="bookshelf">
+    
+    <div class="bookshelf__back"> <a href="/">&lt;-- home</a> </div>
+    <div class="bookshelf__title"> <h1>{{ page.title }}</h1> </div> 
+    <div class="bookshelf__meta"> <p>{{ tags_content }}</p> </div>
+    <div class="bookshelf__last_updated_at"> <p> Last Updated: {{ site.time | date: '%B %-d, %Y' }} </p></div>
+    <div class="bookshelf__content_wrapper">
+        <div class="post__content"?> {{ content }} </div>
+    </div>
+
+    {% for book in site.books %}
+    <div class="bookshelf__content">
+        <table>
+            <tr>
+                <th> {{ book.title }} </th>
+                <th> {{ book.author }} </th> 
+            </tr>
+            <tr>
+                <td class="cover"> <img src="{{ book.image }}"> </td>
+                <td class="post__content"> {{ book.content }} </td>
+            </tr>
+        </table>
+    </div>
+    {% endfor %}
+        
+</div>
