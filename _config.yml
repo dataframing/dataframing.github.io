@@ -23,6 +23,7 @@ name: Danny Vilela
 
 # Site settings
 title: dataframe | danny's blog
+description: "Hey! Here's Danny Vilela's blog on data science, machine learning, and exploratory data analysis. Check it out!"
 email: danny.vilela@nyu.edu
 baseurl: ""
 url: "https://dataframing.github.io"
