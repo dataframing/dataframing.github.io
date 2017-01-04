@@ -22,7 +22,7 @@ highlighter: rouge
 name: Danny Vilela
 
 # Site settings
-title: "dataframe | danny's blog"
+title: "dataframing | danny's blog"
 email: danny.vilela@nyu.edu
 baseurl: ""
 url: "https://dataframing.github.io"
