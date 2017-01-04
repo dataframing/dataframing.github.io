@@ -309,6 +309,12 @@ ul {
         blockquote p {
             display: inline;
         }
+        
+        hr {
+            height: 6px;
+            background: url("../img/slash.png") repeat-x 0 0;
+            border: 0;
+        }
 	}
 }
 
