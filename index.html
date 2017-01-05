@@ -6,9 +6,15 @@ layout: default
     <h1>{{ site.name }}</h1>
     <ul>
         {% for item in site.data.navigation %}
-        <li>
-            <a href="{{ item.url }}">{{ item.title }}</a>
-        </li>
+          {% if item.title == "about" %}
+            <li>
+                <a href="{{ item.url }}">{{ item.title }}</a> /
+            </li>
+          {% elsif item.title == "bookshelf" %}
+            <li>
+                <a href="{{ item.url }}">{{ item.title }}</a>
+            </li>
+          {% endif %}
         {% endfor %}
     </ul>
 </div>
