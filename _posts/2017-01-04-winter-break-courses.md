@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Udemy coursework over the winter break
-description: Start your own static-site from scratch with Jekyll!
+description: Data never sleeps, so why should I?
 category: etc
 tags: data science, spark, python, r, rstats, scala, udemy, udemy courses
 published: true
