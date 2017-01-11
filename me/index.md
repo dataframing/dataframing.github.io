@@ -13,4 +13,4 @@ I like taking a data-driven approach to problem solving and product insights. Th
 Python for general-purpose programming and some data analysis, R for inolved data analysis (dplyr, tidyverse) or visualization (ggplot2, ggvis, shiny), and different flavors of SQL (My/Postgres) for database querying. I'm always expanding my toolset, and right now I have my eyes on Scala (Spark, etc.) and Julia for data science.
 
 # How can I contact you?
-Feel free to reach out via email at [danny.vilela@nyu.edu](#), connect on [LinkedIn](https://linkedin.com/in/dataframing), or check out my [resume](http://bit.ly/dataframing-resume). You can also send me your thoughts and prayers over on [Twitter](https://twitter.com/dataframing)!
+Feel free to check out my [resume](http://bit.ly/dataframing-resume) or reach out via email at [danny.vilela@nyu.edu](#) or  [LinkedIn](https://linkedin.com/in/dataframing). You can also send me your thoughts and prayers over on [Twitter](https://twitter.com/dataframing)!
