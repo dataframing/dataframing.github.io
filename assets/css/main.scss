@@ -6,7 +6,7 @@
 
 body {
 	color: $color-black;
-    background: rgba(255, 250, 240, 0.50);
+  background: rgba(255, 250, 240, 0.50);
 	font-family: 'Inconsolata';
 	font-size: 105%;
 	font-weight: 400;
@@ -99,7 +99,6 @@ ul {
 }
 
 .bookshelf {
-    padding-bottom: 30px;
 
     &__back {
         a {
@@ -110,17 +109,17 @@ ul {
     &__title {
         display: block;
         margin-top: 20px;
-		margin-bottom: 6px;
+				margin-bottom: 6px;
 
         h1 {
-			display: inline-block;
-			font-size: 1.6em;
-			font-weight: 700;
-			padding-right: 10px;
-			padding-bottom: 2px;
-			text-decoration: none;
-			border-bottom: 3px solid $color-black;
-		}
+					display: inline-block;
+					font-size: 1.6em;
+					font-weight: 700;
+					padding-right: 10px;
+					padding-bottom: 2px;
+					text-decoration: none;
+					border-bottom: 3px solid $color-black;
+				}
     }
 
     &__last_updated_at {
@@ -131,8 +130,8 @@ ul {
     &__meta {
         p {
 
+				}
 		}
-	}
 
     &__content {
 
@@ -236,12 +235,17 @@ ul {
 	}
 
     &__content {
-		padding-top: 40px;
+		padding-top: 20px;
 		h1 {
 			font-size: 1.4em;
 			font-weight: 700;
 			margin-top: 25px;
 			margin-bottom: 15px;
+
+			a {
+				padding-bottom: 1px;
+				border-bottom: 2px solid $color-link;
+			}
 		}
 		h2 {
 			font-size: 1.1em;
@@ -326,6 +330,33 @@ ul {
             background: url("../img/slash.png") repeat-x 0 0;
             border: 0;
         }
+
+				table {
+					width: 100%;
+					height: auto;
+					border-collapse: collapse;
+					margin-bottom: 15px;
+
+          tr {
+            border: 1px solid #cccccc;
+            background-color: #f8f8f8;
+
+            th {
+                border: 1px solid #cccccc;
+                font-weight: bold;
+                text-align: center;
+                padding: 13px 6px 13px 6px;
+                background-color: white;
+                vertical-align: middle;
+            }
+
+            td {
+                border: 1px solid #cccccc;
+                padding: 10px;
+                vertical-align: center;
+            }
+        	}
+    		}
 	}
 }
 

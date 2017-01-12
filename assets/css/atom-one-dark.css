@@ -26,6 +26,7 @@ hue-6-2: #e6c07b
   background: #282c34;
   margin-bottom: 15px;
   border-radius: 3px;
+  line-height: 1.2em;
 }
 
 .hljs-comment,
