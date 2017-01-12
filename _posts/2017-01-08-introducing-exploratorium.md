@@ -7,7 +7,9 @@ tags: data science, exploratory data science, exploratory data analysis, spark, 
 published: true
 ---
 
-**Hi!** My name is Danny Vilela. You can find out more [about me](/me), but otherwise I'd like to introduce you to one of my larger personal projects (forever) in development, *Exploratorium*. I got the idea for Exploratorium (admittedly) from a pretty weird dream (think [JSM](https://ww2.amstat.org/meetings/jsm/2016/) meets the circus), but the idea is actually the same! I think exploratory data analysis is really cool, and the more opportunities to develop my #skills as a data scientist, the better.
+**Hi!** My name is Danny Vilela. You can find out more [about me](/me), but otherwise I'd like to introduce you to one of my larger personal projects (forever) in development, *Exploratorium*. Exploratorium is just a collection of exploratory data analyses I've written that I think others might enjoy.
+
+I got the idea for Exploratorium (admittedly) from a pretty weird dream (think [JSM](https://ww2.amstat.org/meetings/jsm/2016/) meets the circus), but the idea is actually the same! I think exploratory data analysis is really cool, and the more opportunities to develop my #skills as a data scientist, the better.
 
 > **Bonus:** I didn't know it at first, but there's an *actual* [Exploratorium museum](https://www.exploratorium.edu/) in San Francisco which is *really* cool.
 
