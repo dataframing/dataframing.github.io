@@ -2,7 +2,7 @@
 layout: post
 title: Udemy coursework over the winter break
 description: Data never sleeps, so why should I?
-category: etc
+category: ds
 tags: data science, spark, python, r, rstats, scala, udemy, udemy courses
 published: true
 ---
