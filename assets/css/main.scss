@@ -8,15 +8,15 @@ body {
 	color: $color-black;
   background: rgba(255, 250, 240, 0.50);
 	font-family: 'Inconsolata';
-	font-size: 105%;
+	font-size: 110%;
 	font-weight: 400;
 }
 h1 {
 	margin-bottom: 5px;
 }
 p {
-	font-size: 1em;
-	line-height: 150%;
+	font-size: .875rem;
+	line-height: 1.71429;
 }
 a {
   color: $color-link;
