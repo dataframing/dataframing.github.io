@@ -357,7 +357,7 @@ The long right tail isn't particularly surprising, but what *is* surprising is t
 
 I've never thought I would rather *not* know the results of an analysis, but this post is giving me a run for my money. Restaurants that currently have an A grade can still have critical health and hygiene violations? Time to wrap this one up and never eat out again.
 
-> Feel free to check out any code, data, and notebooks for this analysis on the [Exploratorium](https://github.com/dataframing/exploratorium/NYC-Restaurants) repository! Everything's open, but get in touch if you have any questions!
+> Feel free to check out any code, data, and notebooks for this analysis on the [Exploratorium](https://github.com/dataframing/exploratorium/tree/master/NYC-Restaurants) repository! Everything's open, but get in touch if you have any questions!
 
 ---
 
