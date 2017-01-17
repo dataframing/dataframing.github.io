@@ -7,7 +7,7 @@
 body {
 	color: $color-black;
   background: rgba(255, 250, 240, 0.50);
-	font-family: 'Inconsolata';
+	font-family: "Inconsolata";
 	font-size: 110%;
 	font-weight: 400;
 }
@@ -172,7 +172,8 @@ ul {
                         margin-left: 30px;
                         margin-top: 12.5px;
                         margin-bottom: 12.5px;
-                        li {
+
+												li {
                             padding-top: 1px;
                             padding-left: 5px;
                             line-height: 1.5em;
@@ -202,16 +203,20 @@ ul {
 }
 
 .post {
-    padding-bottom: 30px;
-    &__back {
-		a {
 
+		padding-bottom: 30px;
+
+		&__back {
+			a {
+
+			}
 		}
-	}
+
 	&__title {
 		display: block;
 		margin-top: 20px;
 		margin-bottom: 6px;
+
 		h1 {
 			display: inline-block;
 			font-size: 1.6em;
@@ -228,14 +233,16 @@ ul {
 			font-style: italic;
 		}
 	}
+
 	&__meta {
 		p {
 
 		}
 	}
 
-    &__content {
+  &__content {
 		padding-top: 20px;
+
 		h1 {
 			font-size: 1.4em;
 			font-weight: 700;
@@ -247,116 +254,171 @@ ul {
 				border-bottom: 2px solid $color-link;
 			}
 		}
+
 		h2 {
 			font-size: 1.1em;
 			font-weight: 700;
 			margin-top: 25px;
 			margin-bottom: 5px;
 		}
+
 		p {
 			font-size: 1em;
 			line-height: 150%;
-            margin-bottom: 15px;
+      margin-bottom: 15px;
 		}
+
 		a {
 			padding-bottom: 1px;
 			border-bottom: 1px solid $color-link;
+
 			&:hover {
 				background-color: $color-grey;
 				text-decoration: none;
 			}
 		}
+
 		strong {
 			font-weight: 700;
 		}
+
 		em {
 			font-style: italic;
 		}
+
 		ul {
 			font-size: 1em;
 			list-style: circle;
-			margin-left: 30px;
+			margin-left: 20px;
 			margin-top: 12.5px;
 			margin-bottom: 12.5px;
+
 			li {
 				padding: 1px;
 				padding-left: 5px;
+				margin-left: 10px;
+
 				@media screen and (max-width: $br) {
 					padding: 10px 0 10px 0;
 				}
-			}
-			@media screen and (max-width: $br) {
-				margin-left: 10px;
+
+				& ul {
+					font-size: 1em;
+					list-style: circle;
+					margin-left: 20px;
+					margin-top: 7px;
+					margin-bottom: 7px;
+
+					& li {
+						padding: 1px;
+						padding-left: 5px;
+						padding-bottom: 5px;
+
+						@media screen and (max-width: $br) {
+							padding: 10px 0 10px 0;
+						}
+					}
+				}
+
+				@media screen and (max-width: $br) {
+					margin-left: 10px;
+				}
 			}
 		}
-        ol {
-            // To copy ul margin-left.
-            margin-left: 30px;
-            margin-bottom: 15px;
-        }
+
+		ol {
+      // To copy ul margin-left.
+      margin-left: 50px;
+      margin-bottom: 15px;
+
+			ul {
+				font-size: 1em;
+				list-style: circle;
+				margin-left: 30px;
+				margin-top: 12.5px;
+				margin-bottom: 12.5px;
+
+				li {
+					padding: 1px;
+					padding-left: 5px;
+
+					@media screen and (max-width: $br) {
+						padding: 10px 0 10px 0;
+					}
+				}
+
+				@media screen and (max-width: $br) {
+					margin-left: 10px;
+				}
+			}
+    }
+
 		img, figure {
 			margin-top: 10px;
 			margin-bottom: 10px;
-            width: 100%;
+      width: 100%;
 
 			@media screen and (max-width: $br) {
 				width: 100%;
 				margin: auto;
 			}
 
-            figcaption {
-                font-style: italic;
-                text-align: center;
+      figcaption {
+          font-style: italic;
+          text-align: center;
 
-								&#no-italic {
-									font-style: normal;
-								}
-            }
+					&#no-italic {
+						font-style: normal;
+					}
+      }
+    }
+
+    blockquote {
+        background: #f9f9f9;
+        border-left: 10px solid #ccc;
+        margin: 1.5em 10px;
+        padding: 0.5em 10px;
+        quotes: "\201C""\201D""\2018""\2019";
+    }
+
+    blockquote p {
+        display: inline;
+    }
+
+    hr {
+        height: 6px;
+        background: url("../img/slash.png") repeat-x 0 0;
+        border: 0;
+    }
+
+		table {
+			width: auto;
+			margin: auto;
+			height: auto;
+			border-collapse: collapse;
+			margin-bottom: 15px;
+
+      tr {
+        border: 1px solid #cccccc;
+        background-color: #f8f8f8;
+				max-width: auto;
+
+        th {
+          border: 1px solid #cccccc;
+          font-weight: bold;
+          text-align: center;
+          padding: 13px 6px 13px 6px;
+          background-color: white;
+          vertical-align: middle;
         }
-        blockquote {
-            background: #f9f9f9;
-            border-left: 10px solid #ccc;
-            margin: 1.5em 10px;
-            padding: 0.5em 10px;
-            quotes: "\201C""\201D""\2018""\2019";
-        }
 
-        blockquote p {
-            display: inline;
-        }
-
-        hr {
-            height: 6px;
-            background: url("../img/slash.png") repeat-x 0 0;
-            border: 0;
-        }
-
-				table {
-					width: 100%;
-					height: auto;
-					border-collapse: collapse;
-					margin-bottom: 15px;
-
-          tr {
+        td {
             border: 1px solid #cccccc;
-            background-color: #f8f8f8;
-
-            th {
-                border: 1px solid #cccccc;
-                font-weight: bold;
-                text-align: center;
-                padding: 13px 6px 13px 6px;
-                background-color: white;
-                vertical-align: middle;
-            }
-
-            td {
-                border: 1px solid #cccccc;
-                padding: 10px;
-                vertical-align: center;
-            }
-        	}
-    		}
+            padding: 10px;
+            vertical-align: middle;
+        }
+  		}
+  	}
 	}
 }
 

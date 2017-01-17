@@ -15,6 +15,7 @@ markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
+  auto_ids: true
   syntax_highlighter: rouge
 highlighter: rouge
 
@@ -30,7 +31,7 @@ url: "https://dataframing.github.io"
 # Gems
 gems:
   - jekyll-seo-tag
-  
+
 collections:
   books:
     output: false
