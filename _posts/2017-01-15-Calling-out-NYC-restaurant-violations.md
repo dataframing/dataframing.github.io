@@ -97,11 +97,11 @@ summary.violations %>%
   rename(Grade = X1, Frequency = X2) %>%
   mutate_all(.funs = str_trim) %>%
   mutate(Frequency = as.numeric(Frequency)) %>%
-  kable(align = "cr")
+  kable
 ```
 
 |      Grade     |  Frequency|
-|:--------------:|----------:|
+|:---------------|----------:|
 |        A       |     161284|
 |        B       |      33679|
 |        C       |       8450|
@@ -141,11 +141,11 @@ entire.tb <- restaurants.at.10003 %>%
 # Tabulate!
 entire.tb %>%
   select(-dba, -boro) %>%
-  kable(align = "clccc")
+  kable
 ```
 
 | inspection.date | violation.description                                                                                                                                                                                                                                                           | critical.flag | score | grade |
-|:---------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------:|:-----:|:-----:|
+|---------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|-----:|:-----|
 |    2016-12-02   | Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.                                                                                                                                  |    Critical   |   5   |   A   |
 |    2015-08-12   | Non-food contact surface improperly constructed. Unacceptable material used. Non-food contact surface or equipment improperly maintained and/or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit. |  Not Critical |   3   |   A   |
 
@@ -287,7 +287,7 @@ violations %>%
 ```
 
 | restaurant.name           |  score| cuisine.description                                              | boro      | inspection.date |
-|:--------------------------|------:|:-----------------------------------------------------------------|:----------|:---------------:|
+|:--------------------------|------:|:-----------------------------------------------------------------|:----------|----------------:|
 | New York Sushi            |    114| Japanese                                                         | Queens    |    2016-06-14   |
 | The Standard East Village |     86| American                                                         | Manhattan |    2016-12-19   |
 | Bamboo Garden Restaurant  |     73| Chinese                                                          | Brooklyn  |    2016-12-21   |
