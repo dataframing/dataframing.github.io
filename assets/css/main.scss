@@ -141,7 +141,6 @@ ul {
   &__title {
       display: block;
       margin-top: 20px;
-			margin-bottom: 6px;
 
       h1 {
 				display: inline-block;
@@ -155,8 +154,13 @@ ul {
   }
 
   &__last_updated_at {
-      font-size: 1em;
-      font-style: italic;
+			p {
+				font-size: 1em;
+				font-style: italic;
+
+				margin-top: 0;
+				padding-top: 0;
+			}
   }
 
   &__meta {
