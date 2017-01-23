@@ -20,6 +20,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
     <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
 
+    <meta content="dataframing | danny's blog" property="og:site_name">
+    <meta content="dataframing | danny's blog" property="og:title">
+    <meta content="website" property="og:type">
+    <meta content="A blog about data science and exploratory data analysis. I make pretty pictures with R." property="og:description">
+    <meta content="http://datafra.me/" property="og:url">
+    <meta content="/assets/img/favicon.png" property="og:image">
+
     <meta property="og:url"           content="{{ site.url }}" />
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="dataframing" />
@@ -33,7 +40,12 @@
 
 <body>
     <div class="banner-top">
-      <img src="/assets/img/colorbar.svg">
+      <!-- ☺️ -->
+      {% if page.image == "twitch" %}
+        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 8"><defs><style>.cls-1{fill:#f1eff7;}.cls-2{fill:#d7d0e8;}.cls-3{fill:#bfb3d8;}.cls-4{fill:#a999c9;}.cls-5{fill:#9681bc;}.cls-6{fill:#856eb1;}.cls-7{fill:#755aa6;}.cls-8{fill:#65449b;}</style></defs><title>twitch-white</title><rect class="cls-1" y="-23.61" width="68.27" height="44.5"/><rect class="cls-2" x="68.27" y="-23.61" width="68.27" height="44.5"/><rect class="cls-3" x="136.53" y="-23.61" width="68.27" height="44.5"/><rect class="cls-4" x="204.8" y="-23.61" width="68.27" height="44.5"/><rect class="cls-5" x="273.07" y="-23.61" width="68.27" height="44.5"/><rect class="cls-6" x="341.33" y="-23.61" width="68.27" height="44.5"/><rect class="cls-7" x="409.6" y="-23.61" width="68.27" height="44.5"/><rect class="cls-8" x="477.87" y="-23.61" width="68.27" height="44.5"/><rect class="cls-7" x="546.13" y="-23.61" width="68.27" height="44.5"/><rect class="cls-6" x="614.4" y="-23.61" width="68.27" height="44.5"/><rect class="cls-5" x="682.67" y="-23.61" width="68.27" height="44.5"/><rect class="cls-4" x="750.93" y="-23.61" width="68.27" height="44.5"/><rect class="cls-3" x="819.2" y="-23.61" width="68.27" height="44.5"/><rect class="cls-2" x="887.47" y="-23.61" width="68.27" height="44.5"/><rect class="cls-1" x="955.73" y="-23.61" width="68.27" height="44.5" alt="Twitching with excitement -- can't you tell?"/></svg>
+      {% else %}
+        <img src="/assets/img/colorbar.svg" alt="Some stinkin' SVG I use as a banner">
+      {% endif %}
     </div>
     <div class="wrapper">
         {{ content }}
