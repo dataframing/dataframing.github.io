@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Analyzing NYC SAT scores 📖
+title: Analyzing NYC SAT scores
 description: "The one where I weep over NYC SAT scores"
 category: exploratorium
 tags: data science, exploratory data science, exploratory data analysis, r, rstats, exploratorium, danny vilela, danny vilela nyu
