@@ -8,23 +8,23 @@ published: true
 image: "twitch"
 ---
 
-[Twitch](https://www.twitch.tv/) is a platform for anyone to host live video streams. Twitch users can host their own live streams and other Twitch users can tune in, interact with the host and other users through a live chat, and support the host via donations. Well-known as a bedrock for the gaming and e-sports communities, Twitch has massively influenced the livestream market -- ranking [fourth in peak US Internet traffic](https://blog.twitch.tv/twitch-is-4th-in-peak-us-internet-traffic-90b1295af358#.onmeqfe4b) in 2014.
+[Twitch](https://www.twitch.tv/) is a platform for anyone to host live video streams. Think of Twitch as the platform  you didn't know you wanted: you can watch hosts do their thing (gaming, news, etc.), chat with other users live, interact with the host, make donations to the channel, and much more. Well-known as a bedrock for the gaming and e-sports communities, Twitch has massively influenced the livestream market \-\- ranking [fourth in peak US Internet traffic](https://blog.twitch.tv/twitch-is-4th-in-peak-us-internet-traffic-90b1295af358#.onmeqfe4b) in 2014.
 
-I stumbled upon a 2013 data set (I know, I know, it's a bit old -- but it's the principle that counts...right? Right?) of channel and session data for Twitch, and knew I wanted to take a look. Twitch has changed a *ton* since 2013, but it's still interesting to see how we can retro-actively understand broadcaster dynamic and user behavior on the early live-streaming platform --- what trends emerge, and how can we reason about platform dynamics? What can we say about site audience interest given session data?
+I stumbled upon a 2013 data set (I know, I know, it's a bit old \-\- but it's the principle that counts...right? Right?) of channel and session data for Twitch, and knew I wanted to take a look. Twitch has changed a *ton* since 2013, but it's still interesting to see how we can retro-actively understand broadcaster dynamic and user behavior on the early live-streaming platform \-\-\- what trends emerge, and how can we reason about platform dynamics? What can we say about site audience interests given session data?
 
 All interesting questions! Let's find out.
 
 Sourcing the data
 =================
 
-All of the data can be found on [Telecom Bretagne](http://dash.ipv6.enstb.fr/dataset/live-sessions/) -- a research center and (I *think*) college in France. From what I can tell, Telecom Bretagne curated this dataset for submission into the 2015 ACM Multi-media Systems -- MMSYS 2015 -- conference, so it seems pretty legit. Telecom Bretagne actually has both Youtube Live and Twitch data sets from 2014 and numerous data sets, to boot. The original datasets are 81 GB (Youtube Live) and 241 GB (Twitch) of streaming data, but they've done us the favor of providing aggregated data sets that are much more reasonable in size (2.4 GB).
+All of the data can be found on [Telecom Bretagne](http://dash.ipv6.enstb.fr/dataset/live-sessions/) \-\- a research center and (I *think*) college in France. From what I can tell, Telecom Bretagne curated this dataset for submission into the 2015 ACM Multi-media Systems \-\- MMSYS 2015 \-\- conference, so it seems pretty legit. Telecom Bretagne actually has both Youtube Live and Twitch data sets from 2013 and numerous data sets, to boot. The original datasets are 81 GB (Youtube Live) and 241 GB (Twitch) of streaming data, but they've done us the favor of providing aggregated data sets that are much more reasonable in size (2.4 GB).
 
-Telecom Bretagne claims that this data was collected from Twitch's API. A minor note is that -- to my knowledge -- we can't easily verify the integrity of our data set. Ideally we would ping Twitch's API ourselves over a few weeks or months for this data, but we'll have to make-do with some older data. I trust the French, however, so I'll let it slide this time. Let's get to the cleaning!
+Telecom Bretagne claims that this data was collected from Twitch's API. A minor note is that \-\- to my knowledge \-\- we can't easily verify the integrity of our data set. Ideally we would ping Twitch's API ourselves over a few weeks or months for this data, but we'll have to make-do with some older data. I trust the French, however, so I'll let it slide this time. Let's get to the cleaning!
 
 Data cleaning / wrangling
 =========================
 
-The data set itself didn't require much cleaning at all -- then again, I'm sure the researchers did it for us. I'll be posting a [part 2 to this post](javascript: void(0)) (that link will be valid when it's live) where I tackle a larger, less aggregated data set -- there, one of the problems I faced was data volume. But with no outstanding issues in our data set, we can move on to the analysis. Here are the defaults I'm working with:
+The data set itself didn't require much cleaning at all \-\- then again, I'm sure the researchers did it for us. I'll be posting a [part 2 to this post](javascript: void(0)) (that link will be valid when it's live) where I tackle a larger, less aggregated data set \-\- there, one of the problems I faced was data volume. But with no outstanding issues in our data set, we can move on to the analysis. Here are the defaults I'm working with:
 
 ``` r
 # Some behind-the-curtains setup
@@ -58,7 +58,7 @@ I'll be exploring the channel data set, which should give us insight into Twitch
 data <- read_csv("../data/channels.csv")
 ```
 
-As it turns out, we don't really need some of this information. Columns relating to bitrate, broadcaster, audio and video codec, etc. haven't really stood out to me, so I'll filter those out (we can also filter out "channel\_id" because we have "channel\_login" as a more descriptive unique channel identifier).
+Before any analysis, I'll take a look at the variables provided and scope out which ones I'd like to look into. As it turns out, we don't really need some of this information. Columns relating to bitrate, broadcaster, audio and video codec, etc. haven't really stood out to me and don't really offer much (in my opinion) with respect to analysis interpretability, so I'll filter those out. We can also filter out "channel\_id" \-\- kind of like a unique ID assigned to a channel for identification \-\- because we have "channel\_login" as a more descriptive unique channel identifier.
 
 ``` r
 # Remove a few columns and replace <NA>'s in the mature column.
@@ -71,7 +71,7 @@ channels <- data %>%
   replace_na(list(mature = "False"))
 ```
 
-My initial exploration question is pretty basic and high-level: how does channel popularity manifest on Twitch? We can take a rough first-look by using the "viewers\_sum" field, which is an aggregate of the total number of viewers that channel has had across sessions (remember: these values are aggregates --- I'll be sure to highlight where that might lead to a lack of interpretability, but it's helpful to keep in mind).
+My initial exploration question is pretty high-level: how does channel popularity manifest on Twitch? We can take a rough first-look by using the "viewers\_sum" field, which is an aggregated sum of the total number of viewers that channel has had across 3 months worth of sessions (remember: these values are aggregates \-\-\- I'll be sure to highlight where that might lead to a lack of interpretability, but it's helpful to keep in mind).
 
 ``` r
 # Define our color "palette" :)
@@ -85,7 +85,7 @@ channels %>%
     scale_x_log10(breaks = 10^(0:7), labels = 10^(0:7) %>% comma, limits = c(0.5, 10^7)) +
     scale_y_continuous(labels = comma) +
     scale_fill_continuous(low = "grey50", high = twitch.purple, guide = F) +
-    labs(x = "Sum of viewers", y = "Count",
+    labs(x = "Sum of viewers", y = "Channel count",
          title = "Not all channels made equal",
          subtitle = paste("Viewership on Twitch follows a long-right tail,",
                           "with almost half of all channels not reaching 10 total viewers.",
@@ -100,8 +100,6 @@ channels %>%
 ```
 
 ![](../figs/2017-02-02-twitch-analysis_files/figure-markdown_github/popularity-1.png)
-
-(It's worth noting that when we apply a log transformation, we lose all channels whose viewership sum over three months is 0 (log\_10(0) = -Inf). Not the biggest deal, but contributes to the central tendency.)
 
 To nobody's surprise, channel view count is a long, *long* right tail with an already-tiny minority of users gaining 100 viewers over approximately three months. I expected a prominent tail, but the strong concentration at particularly low values is worth digging into. To do so, we can use a cumulative sum table to see the increasing change between groups.
 
@@ -146,15 +144,15 @@ channels %>%
 | \[10,000,000, 100,000,000)    |          63|           100.0%|
 | \[100,000,000, 1,000,000,000) |           3|           100.0%|
 
-Interesting, but also a bit...depressing? Over three months, we note that less than 82.2% of channels were able to exceed 100 views. I suspect this can be explained in a few ways:
+Interesting, but also a bit depressing? Over three months, we note that less than 82.2% of channels were able to exceed 100 views. I suspect this can be explained in a few ways:
 
 -   many channels might only stream once or twice (e.g., active v.s. inactive v.s. one-off streamers)
 
--   more Twitch users likely tune-in to watch and not stream
+-   more casual Twitch users likely tune-in to watch established and/or featured channels
 
--   category saturation -- some categories are *very* popular, and so smaller channels are largely ignored
+-   category saturation \-\- some categories are *very* popular, and so smaller channels are largely ignored
 
-*Note:* this comparison isn't accounting for established popularity effects (e.g., if a popular YouTube or Vine personality conducts a livestream, their viewer base will be significantly higher). In fact, what immediately stands out are the lonely 3 channels that are pulling between 100MM and 1B views over three months. To make sure these aren't errors in our data, let's get their names:
+*Note:* this comparison isn't accounting for established popularity effects (e.g., if a popular YouTube or Vine personality conducts a livestream, their viewer base will be significantly higher). In fact, what immediately stands out are the "lonely" 3 channels that are pulling between 100M and 1B views over three months. To make sure these aren't errors in our data, let's get their names:
 
 ``` r
 # Obtain top 3 gaming-category channels based on viewers_sum.
@@ -173,9 +171,9 @@ channels %>%
 | twitchplayspokemon |   205,707,606|       116,745|
 | nightblue3         |   124,751,206|        64,598|
 
-Aha! The channels at the very top of Twitch viewership are an interesting mix -- [Riot Games' official Twitch](https://www.twitch.tv/riotgames), Twitch's hilarious pilot of [Twitch Plays Pokemon](https://en.wikipedia.org/wiki/Twitch_Plays_Pok%C3%A9mon), and professional League of Legends player/full-time streamer Nightblue3.
+Aha! The channels at the very top of Twitch viewership are an interesting mix \-\- [Riot Games' official Twitch](https://www.twitch.tv/riotgames), Twitch's hilarious pilot of [Twitch Plays Pokemon](https://en.wikipedia.org/wiki/Twitch_Plays_Pok%C3%A9mon), and professional League of Legends player/full-time streamer Nightblue3.
 
-If we were using this data to make predictions or understand trends in Twitch channels, we would likely remove these data points due to their clear stance as outliers. We can further understand how channels perform relative to their channel "category" --- the main content they stream.
+If we were using this data to make predictions or understand trends in Twitch channels, we would likely remove these data points due to their clear stance as outliers. We can further understand how channels perform relative to their channel "category" \-\-\- the main content they stream.
 
 ``` r
 # Plot category viewership dynamics.
@@ -207,7 +205,7 @@ Gaming alone is responsible for a *large* majority of channels that have a massi
 Featured Channels
 =================
 
-Our data set also includes a feature on whether or not a channel was featured on the Twitch homepage. Being featured to all of Twitch might lead to an up-and-coming channel's mainstream discovery, or it might manifest as a minor bump in a well-known channel's viewership. I'd be curious to know whether being featured has a significant impact on viewership, and whether features are being spread relatively equally or concentrated on particular categories. Let's find out!
+Our data set also includes a feature on whether or not a channel was featured on the Twitch homepage. Being featured to all of Twitch might lead to an up-and-coming channel's mainstream discovery, or it might manifest as a minor increase in a well-known channel's viewership. I'd be curious to know whether being featured has a significant impact on viewership, and whether features are being spread relatively equally or concentrated on particular categories. Let's find out!
 
 ``` r
 # Determine summary statistics for getting featured.
@@ -227,9 +225,11 @@ channels %>%
 | True     |     3262|       939396.054|            18614.5|
 | False    |  1533088|         1412.463|               10.0|
 
-Alrighty then! Those numbers are pretty high, but seeing as how we don't have full information (channel-by-channel viewership pre- and post-feature), we're far from being able to make a causal claim like "Being featured leads to a x% increase in channel viewers over y time". We also cannot test the counter-factual: if a channel X is marked as "featured", we have no reasonable estimate of how it would have fared if it hadn't been featured.
+It's important to note that the above uses median \-\- I've included but won't utilize mean \-\- viewership as the measure of effect. The results look drastically different if we use the mean, but that's largely because the distribution has many outliers that pull up the mean viewership by *a lot* (that's a scientific term). Despite the many one-digit instances, the numerous outliers drive them way up. Hence, we use the median as opposed to mean.
 
-It's also important to realize that the feature flag isn't continuous -- it doesn't tell us *how* many times a channel was featured over three months, only whether it *was* or *wasn't* featured. This means that a high-profile, featured channel like "riotgames" or a...featured channel with 0 total viewers, "puddin1".
+Alrighty then! The difference in those numbers are pretty high, but seeing as how we don't have full information (channel-by-channel viewership pre- and post-feature), we're far from being able to make a causal claim like "Being featured leads to a x% increase in channel viewers over time." We also cannot test the counter-factual: if a channel X is marked as "featured," we have no rigorous estimate of how it would have fared if it hadn't been featured (aside from, say, a weighted expected value).
+
+It's also important to realize that the feature flag isn't continuous \-\- it doesn't tell us *how* many times a channel was featured over three months, only whether it *was* or *wasn't* featured. This means that if we're only looking at the featured feature, a high-profile channel like *riotgames* and a channel with 0 total viewers *puddin1*, are measured to be the same: featured.
 
 That said, let's see how being featured differs across category:
 
@@ -271,11 +271,11 @@ channels %>%
 
 ![](../figs/2017-02-02-twitch-analysis_files/figure-markdown_github/featured-effect-category-1.png)
 
-If you think the above plot was a waste of time, I wouldn't disagree -- it's readily obvious that, across effectively all categories, there is a *stark* difference in median viewership between featured and non-featured channels. There's so little viewership on non-featured channels relative to featured channels that I actually started debugging my above plotting code because I thought I did something wrong!
+If you think the above plot was a waste of time, I wouldn't disagree \-\- it's readily obvious that, across effectively all categories, there is a *stark* difference in median viewership between featured and non-featured channels. There's so little viewership on non-featured channels relative to featured channels that I actually started debugging my above plotting code because I thought I did something wrong!
 
-Finally, let's consider our "mature" feature. On Twitch, streamers have the option of marking their channel as "mature", meaning the content is not quite for children (cursing, mature gameplay, etc). Given the surprising number of kids on the internet these days (here's [one](https://twitter.com/realDonaldTrump)) with their Minecraft streams and all, marking a channel as mature probably goes both ways: it helps children avoid content that might not be suitable for them, and it also ensures a mature streamer's channel is reaching the right audience.
+Finally, let's consider our *mature* feature. On Twitch, streamers have the option of marking their channel as "mature", meaning the content is not quite for children (cursing, mature gameplay, etc). Given the surprising number of kids on the internet these days (here's [one](https://twitter.com/realDonaldTrump)) with their Minecraft streams and all, marking a channel as mature probably goes both ways: it helps children avoid content that might not be suitable for them, and it also ensures a mature streamer's channel is reaching the right audience.
 
-One concern I would have as a broadcaster is regarding audience reach: does marking your channel as mature have an impact on viewership?
+One concern I would have as a streamer is audience reach: does marking your channel as mature have a negative impact on viewership?
 
 ``` r
 # Plot category viewer count, split on mature flag.
@@ -314,16 +314,14 @@ channels %>%
 
 ![](../figs/2017-02-02-twitch-analysis_files/figure-markdown_github/mature-channels-1.png)
 
-For most categories, there's no significant difference between non-mature and mature channel viewership (except animals, where non-mature beats out mature by a good amount -- seeing the cute puppies fills you with determination). Again, we're a bit limited in our interpretation of these results: we can't control for established vs hobbyist channels, confounding between being featured and being a mature channel, and quite a bit more.
-
-It's important to note that the above two plots use median -- not mean -- viewership as the measure of effect. The results look drastically different if we use the mean, but that's largely because the distribution has many outliers that pull up the mean viewership by *a lot*. Despite the many one-digit instances, the numerous outliers drive them way up. Hence, we use the median as opposed to mean.
+For most categories, there's no significant difference between non-mature and mature channel viewership (except animals, where non-mature beats out mature by a good amount \-\- seeing the cute puppies [fills you with determination](http://66.media.tumblr.com/162da96ed31cb0b2aa88509915ab6f2f/tumblr_nw665yl5WR1sryabyo1_400.gif)).
 
 The end
 =======
 
-What an interesting data set! It's regrettable that we don't have more atomic information -- or, rather, that we have to save the more atomic data set for later -- but we can already start seeing interesting trends in Twitch audience dynamics.
+What an interesting data set! It's regrettable that we don't have more atomic information \-\- or, rather, that we have to save the more atomic data set for later \-\- but we can already start seeing interesting trends in Twitch audience dynamics.
 
-The next steps for analyzing Bretagne Telecom's data sets would be to look at unfiltered, un-aggregated session data to look for patterns over time -- how being featured effects channel viewership and subscriptions, how language transaction manifests between international streamers and audiences, and more! Really excited to follow-up on this data set.
+The next steps for analyzing Bretagne Telecom's data sets would be to look at unfiltered, un-aggregated session data to look for patterns over time \-\- how being featured effects channel viewership and subscriptions, how language transaction manifests between international streamers and audiences, and more! Really excited to follow-up on this data set.
 
 > Feel free to check out any code, data, and notebooks for this analysis on the [Exploratorium](https://github.com/dataframing/exploratorium/tree/master/twitch/) repository! Everything's open, but get in touch if you have any questions!
 
