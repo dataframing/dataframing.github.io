@@ -17,7 +17,7 @@ All of the data can be downloaded [directly from StackOverflow](http://stackover
 
 This dataset is a survey of data collected *internationally*, meaning we can't expect perfectly clean or complete data (can we ever?). Furthermore, given it's a survey, we can expect to be dealing with multiple confounding factors like *self-selection bias*, *incentive bias*, and *completion bias*, among others.
 
-> There's a great daily mailing list -- [Data Driven Daily](datadrivendaily.io) -- that really helped me understand the issues with designing, interpreting, and -- most of all -- analyzing survey data. I highly recommend you check it out!
+> There's a great daily mailing list -- [Data Driven Daily](http://www.datadrivendaily.io) -- that really helped me understand the issues with designing, interpreting, and -- most of all -- analyzing survey data. I highly recommend you check it out!
 
 Let's explore what we can learn about developers and the state of the tech industry!
 
