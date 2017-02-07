@@ -43,7 +43,7 @@ theme_set(theme_minimal(base_family = "Menlo") +
 # Pre-processing
 To start off, I immediately noticed I was dealing with a fairly sizable dataset: approximately half a gigabyte spread across 8 files (*code-test0000\_part\_00*, ..., *code-test0007\_part\_00*). Furthermore, I quickly noticed the files were not comma-delimited but pipe-delimited ("|" separating each observation field).
 
-To make the analysis more tractable, I opted to join the files into one master file. I first manually inserted the header names into the master file *master.csv* \-\- there are likely better ways to do so with *sed*, but for a fairly low-dimensional dataset I thought it would be too much of a time sink.
+To make the analysis more tractable, I opted to join the files into one master file. I first manually inserted the header names into the master file *master.csv* \-\- there are likely better ways to do so with *sed*, but for a fairly low-dimensional dataset I thought it would be too much of a time-sink.
 
 Once I had the pipe-separated header in *master.csv*, I joined all files into *master.csv* like so:
 
