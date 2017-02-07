@@ -457,7 +457,7 @@ rf
     #>           Mean of squared residuals: 1.370001e-05
     #>                     % Var explained: 38.72
 
-About time! We see that the the forest's root mean squared error is 0.373% \-\- lower than assuming the mean is the best estimation of our outcome! *Phew*. That said, the interpretability of our model has been compromised considerably: using only the columns defined in *cols*, we don't get any input from the region, country, etc. features that we dropped earlier. A shame, because we're effectively sure that including more features will never hurt the performance of a machine learning model.
+About time! We see that the forest's root mean squared error is 0.373% \-\- lower than assuming the mean is the best estimation of our outcome! *Phew*. That said, the interpretability of our model has been compromised considerably: using only the columns defined in *cols*, we don't get any input from the region, country, etc. features that we dropped earlier. A shame, because we're effectively sure that including more features will never hurt the performance of a machine learning model.
 
 Now that we have an improved model, how can we derive business insights from it? Well, we can check variable importance, which gives us a relative understanding of what variables are most influential over our model's prediction for clickthrough rate.
 
