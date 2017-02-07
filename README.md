@@ -8,9 +8,8 @@ Below is the README included in the original repository. The instructions for ge
 
 - Make things not terrible on mobile :)
 - Get that bookshelf populated!
-- Read!
-- Get a few Exploratorium examples up
 - Get site title to change from `dataframe | home` to `dataframe | about` to `dataframe | <post title>`
+- Fix the highlighting what even is that
 
 ---
 
