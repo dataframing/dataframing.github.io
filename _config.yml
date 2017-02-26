@@ -17,20 +17,21 @@ kramdown:
   hard_wrap: false
   auto_ids: true
   syntax_highlighter: rouge
-highlighter: rouge
 
 # My variables
 name: Danny Vilela
 
 # Site settings
-title: "dataframing | danny's blog"
+title: dataframing | danny's blog
 email: danny.vilela@nyu.edu
-baseurl: ""
-url: "https://dataframing.github.io"
+baseurl: "/"
+url: http://datafra.me
 
 # Gems
 gems:
   - jekyll-seo-tag
+  - rouge
+  - kramdown
 
 collections:
   books:
