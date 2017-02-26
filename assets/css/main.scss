@@ -519,3 +519,31 @@ p#landing-page-text {
 small {
     font-size: 0.70em;
 }
+
+/* Code */
+code, pre {
+  font-family: Menlo;
+}
+code {
+  padding: .25em .5em;
+  font-size: 83%;
+  border-radius: 4px;
+	color: #c7254e;
+	background-color: #f9f2f4;
+}
+pre {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: 0.8em;
+  line-height: 1.5;
+	overflow-x: auto;
+  background-color: #f9f9f9;
+}
+pre code {
+  padding: 0;
+  font-size: 100%;
+  color: inherit;
+  background-color: transparent;
+}
